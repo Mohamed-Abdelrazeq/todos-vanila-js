@@ -1,7 +1,6 @@
 const todos = document.querySelector(".todos");
 const todoForm = document.querySelector(".add");
 const search = document.querySelector(".search input");
-const todosList = document.querySelectorAll(".todos li");
 
 // delete todos
 todos.addEventListener("click", function (e) {
@@ -26,6 +25,7 @@ todoForm.addEventListener("submit", function (e) {
 // filter todos
 search.addEventListener("keyup", function (e) {
   e.preventDefault();
+  const todosList = document.querySelectorAll(".todos li");
   const keyword = search.value.trim().toLowerCase();
   todosList.forEach((element) => {
     if (element.children[0].innerHTML.includes(keyword)) {
